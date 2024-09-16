@@ -17,7 +17,7 @@ Make sure you keep the API secret key (**pspark_secret.key**) safe and secure. D
 To install the Go SDK, you can use `go get`:
 
 ```bash
-go get github.com/pspark/sdk-go
+go get github.com/ps-park/sdk-go
 ```
 
 ## Request examples
@@ -38,7 +38,7 @@ if err != nil {
     log.Fatal(err)
 }
 
-fmt.PrintLn(balances)
+fmt.Println(balances)
 
 ```
 

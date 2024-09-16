@@ -1,5 +1,5 @@
 test:
-	@go test
+	@go test -v
 
 build:
-	@go build -o sdk-go
+	@go build -o bin/sdk-go
