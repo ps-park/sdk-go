@@ -24,10 +24,12 @@ type CryptoInfo struct {
 }
 
 type CustomerInfo struct {
-	FirstName *string `json:"first_name,omitempty"`
-	LastName  *string `json:"last_name,omitempty"`
-	Email     *string `json:"email,omitempty"`
-	Phone     *string `json:"phone,omitempty"`
+	FirstName  *string `json:"first_name,omitempty"`
+	LastName   *string `json:"last_name,omitempty"`
+	Email      *string `json:"email,omitempty"`
+	Phone      *string `json:"phone,omitempty"`
+	CustomerID *string `json:"customer_id,omitempty"`
+	NationalID *string `json:"national_id,omitempty"`
 }
 
 type BillingInfo struct {
@@ -56,6 +58,10 @@ type UISchema struct {
 	Language *string `json:"language,omitempty"` // Values: "en", "ua", "ru"
 }
 
+type EscrowPayment struct {
+	PaymentWalletID *string `json:"payment_wallet_id,omitempty"`
+}
+
 type FlowData struct {
 	Action string        `json:"action"`
 	Method string        `json:"method"`
@@ -63,20 +69,15 @@ type FlowData struct {
 }
 
 type InvoiceRequest struct {
-	Reference   string        `json:"reference"`
-	Title       *string       `json:"title,omitempty"`
-	Description *string       `json:"description,omitempty"`
-	LimitMinute *int          `json:"limit_minute,omitempty"`
-	CallbackURL *string       `json:"callback_url,omitempty"`
-	Amount      float64       `json:"amount"`
-	Currency    string        `json:"currency"`
-	ReturnURL   string        `json:"return_url"`
-	Customer    *CustomerInfo `json:"customer,omitempty"`
-	BillingInfo *BillingInfo  `json:"billing_info,omitempty"`
-	Bank        *BankInfo     `json:"bank,omitempty"`
-	CardData    *CardData     `json:"card_data,omitempty"`
-	WebData     *WebData      `json:"web_data,omitempty"`
-	UI          *UISchema     `json:"ui,omitempty"`
+	Reference   string   `json:"reference"`
+	Title       *string  `json:"title,omitempty"`
+	Description *string  `json:"description,omitempty"`
+	LimitMinute *int     `json:"limit_minute,omitempty"`
+	CallbackURL *string  `json:"callback_url,omitempty"`
+	Amount      float64  `json:"amount"`
+	Currency    string   `json:"currency"`
+	ReturnURL   string   `json:"return_url"`
+	Details     *Details `json:"details,omitempty"`
 }
 
 type InvoiceResponse struct {
@@ -85,12 +86,12 @@ type InvoiceResponse struct {
 	WalletID      string    `json:"wallet_id"`
 	Currency      string    `json:"currency"`
 	Amount        float64   `json:"amount"`
-	AmountInitial float64   `json:"amount_initial"`
+	AmountInitial float64   `json:"amount_initial,omitempty"`
 	Type          string    `json:"type"`
 	Status        string    `json:"status"`
 	StatusCode    int       `json:"status_code,omitempty"`
 	StatusMessage string    `json:"status_message,omitempty"`
-	PaymentFee    float64   `json:"payment_fee"`
+	PaymentFee    float64   `json:"payment_fee,omitempty"`
 	Address       string    `json:"address,omitempty"`
 	Memo          string    `json:"memo,omitempty"`
 	FlowData      *FlowData `json:"flowData,omitempty"`
@@ -110,30 +111,33 @@ type AddressResponse struct {
 	WalletID      string  `json:"wallet_id"`
 	Currency      string  `json:"currency"`
 	Amount        float64 `json:"amount"`
-	AmountInitial float64 `json:"amount_initial"`
+	AmountInitial float64 `json:"amount_initial,omitempty"`
 	Type          string  `json:"type"`
 	Status        string  `json:"status"`
 	StatusCode    int     `json:"status_code,omitempty"`
 	StatusMessage string  `json:"status_message,omitempty"`
-	PaymentFee    float64 `json:"payment_fee"`
+	PaymentFee    float64 `json:"payment_fee,omitempty"`
 	Address       string  `json:"address,omitempty"`
 	Memo          string  `json:"memo,omitempty"`
 }
 
-type WithdrawalDetails struct {
-	Crypto   *CryptoInfo   `json:"crypto,omitempty"`
-	Customer *CustomerInfo `json:"customer,omitempty"`
-	Billing  *BillingInfo  `json:"billing_info,omitempty"`
-	Bank     *BankInfo     `json:"bank,omitempty"`
-	CardData *CardData     `json:"card_data,omitempty"`
-	WebData  *WebData      `json:"web_data,omitempty"`
+type Details struct {
+	Crypto        *CryptoInfo    `json:"crypto,omitempty"`
+	Customer      *CustomerInfo  `json:"customer,omitempty"`
+	Billing       *BillingInfo   `json:"billing_info,omitempty"`
+	Bank          *BankInfo      `json:"bank,omitempty"`
+	CardData      *CardData      `json:"card_data,omitempty"`
+	WebData       *WebData       `json:"web_data,omitempty"`
+	UI            *UISchema      `json:"ui,omitempty"`
+	EscrowPayment *EscrowPayment `json:"escrow_payment,omitempty"`
 }
 
 type WithdrawalRequest struct {
-	Reference string             `json:"reference"`
-	Amount    float64            `json:"amount"`
-	Account   string             `json:"account"`
-	Details   *WithdrawalDetails `json:"details,omitempty"`
+	Reference   string   `json:"reference"`
+	Amount      float64  `json:"amount"`
+	Account     string   `json:"account"`
+	CallbackURL *string  `json:"callback_url,omitempty"`
+	Details     *Details `json:"details,omitempty"`
 }
 
 type WithdrawalResponse struct {
@@ -145,6 +149,6 @@ type WithdrawalResponse struct {
 	Status        string  `json:"status"`
 	StatusCode    int     `json:"status_code,omitempty"`
 	StatusMessage string  `json:"status_message,omitempty"`
-	PaymentFee    float64 `json:"payment_fee"`
-	AmountSpent   float64 `json:"amount_spent"`
+	PaymentFee    float64 `json:"payment_fee,omitempty"`
+	AmountSpent   float64 `json:"amount_spent,omitempty"`
 }
