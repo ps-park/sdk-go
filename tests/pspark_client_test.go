@@ -1,4 +1,4 @@
-package sdk_go
+package tests
 
 import (
 	"crypto/rand"
@@ -9,6 +9,8 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	sdk_go "github.com/ps-park/sdk-go"
 )
 
 var secret = generatePrivateKey()
@@ -19,7 +21,7 @@ func TestGetWalletBalance(t *testing.T) {
 	}))
 	defer server.Close()
 
-	client := PSPark{
+	client := sdk_go.PSPark{
 		Secret:  secret,
 		APIKey:  "test-api",
 		BaseURL: server.URL,
@@ -43,7 +45,7 @@ func TestGetBalances(t *testing.T) {
 	}))
 	defer server.Close()
 
-	client := PSPark{
+	client := sdk_go.PSPark{
 		Secret:  secret,
 		APIKey:  "test-api",
 		BaseURL: server.URL,
@@ -66,13 +68,13 @@ func TestCreateInvoice(t *testing.T) {
 	}))
 	defer server.Close()
 
-	client := PSPark{
+	client := sdk_go.PSPark{
 		Secret:  secret,
 		APIKey:  "test-api",
 		BaseURL: server.URL,
 	}
 
-	invoice, err := client.CreateInvoice("test-id", InvoiceRequest{
+	invoice, err := client.CreateInvoice("test-id", sdk_go.InvoiceRequest{
 		Reference: "test-ref",
 		Amount:    100,
 	})
@@ -92,13 +94,13 @@ func TestCreateAddress(t *testing.T) {
 	}))
 	defer server.Close()
 
-	client := PSPark{
+	client := sdk_go.PSPark{
 		Secret:  secret,
 		APIKey:  "test-api",
 		BaseURL: server.URL,
 	}
 
-	address, err := client.CreateAddress("test-id", AddressRequest{
+	address, err := client.CreateAddress("test-id", sdk_go.AddressRequest{
 		Reference: "test-ref",
 	})
 	if err != nil {
@@ -117,13 +119,13 @@ func TestCreateWithdrawal(t *testing.T) {
 	}))
 	defer server.Close()
 
-	client := PSPark{
+	client := sdk_go.PSPark{
 		Secret:  secret,
 		APIKey:  "test-api",
 		BaseURL: server.URL,
 	}
 
-	withdrawal, err := client.CreateWithdrawal("test-id", WithdrawalRequest{
+	withdrawal, err := client.CreateWithdrawal("test-id", sdk_go.WithdrawalRequest{
 		Reference: "test-ref",
 		Amount:    100,
 	})
