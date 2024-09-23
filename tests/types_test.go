@@ -1,10 +1,11 @@
-package sdk_go
+package tests
 
 import (
 	"encoding/json"
 	"testing"
 
 	"github.com/nsf/jsondiff"
+	sdk_go "github.com/ps-park/sdk-go"
 )
 
 func TestDetailsStructure(t *testing.T) {
@@ -21,7 +22,10 @@ func TestDetailsStructure(t *testing.T) {
 		  "billing_info": {
 			"address": "Address",
 			"country_code": "UA",
-			"country": "Ukraine"
+			"country": "Ukraine",
+			"city": "Kyiv",
+			"post_code": "01001",
+			"region": "Kyiv Oblast"
 		  },
 		  "bank": {
 			"account": "Bank Account",
@@ -45,47 +49,50 @@ func TestDetailsStructure(t *testing.T) {
 		}
 	`
 
-	crypto := &CryptoInfo{
+	crypto := &sdk_go.CryptoInfo{
 		Memo: strPtr("123456"),
 	}
 
-	customer := &CustomerInfo{
+	customer := &sdk_go.CustomerInfo{
 		FirstName:  strPtr("First Name"),
 		LastName:   strPtr("Last Name"),
 		CustomerID: strPtr("customer-id"),
 	}
 
-	billing := &BillingInfo{
+	billing := &sdk_go.BillingInfo{
 		Address:     strPtr("Address"),
 		CountryCode: strPtr("UA"),
 		Country:     strPtr("Ukraine"),
+		City:        strPtr("Kyiv"),
+		PostCode:    strPtr("01001"),
+		Region:      strPtr("Kyiv Oblast"),
 	}
 
-	bank := &BankInfo{
+	bank := &sdk_go.BankInfo{
 		Account: strPtr("Bank Account"),
 		ID:      strPtr("Bank ID"),
 		Name:    strPtr("Bank Name"),
 	}
 
-	cardData := &CardData{
+	cardData := &sdk_go.CardData{
 		ExpMonth: strPtr("08"),
 		ExpYear:  strPtr("2030"),
 	}
 
-	webData := &WebData{
+	webData := &sdk_go.WebData{
 		IP:        strPtr("Firefox"),
 		UserAgent: strPtr("127.0.0.1"),
 	}
 
-	uii := &UISchema{
+	uii := &sdk_go.UISchema{
 		Language: strPtr("en"),
 	}
 
-	escowPayment := &EscrowPayment{
+	escowPayment := &sdk_go.EscrowPayment{
 		PaymentWalletID: strPtr("uuid"),
 	}
 
-	details := Details{
+	details := sdk_go.Details{
 		Crypto:        crypto,
 		Customer:      customer,
 		Billing:       billing,
