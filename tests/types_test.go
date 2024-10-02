@@ -17,7 +17,8 @@ func TestDetailsStructure(t *testing.T) {
 		  "customer": {
 			"first_name": "First Name",
 			"last_name": "Last Name",
-			"customer_id": "customer-id"
+			"customer_id": "customer-id",
+			"taxpayer_identification_number": "12345-6688"
 		  },
 		  "billing_info": {
 			"address": "Address",
@@ -54,9 +55,10 @@ func TestDetailsStructure(t *testing.T) {
 	}
 
 	customer := &sdk_go.CustomerInfo{
-		FirstName:  strPtr("First Name"),
-		LastName:   strPtr("Last Name"),
-		CustomerID: strPtr("customer-id"),
+		FirstName:                    strPtr("First Name"),
+		LastName:                     strPtr("Last Name"),
+		CustomerID:                   strPtr("customer-id"),
+		TaxpayerIdentificationNumber: strPtr("12345-6688"),
 	}
 
 	billing := &sdk_go.BillingInfo{

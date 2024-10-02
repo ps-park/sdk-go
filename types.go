@@ -24,12 +24,13 @@ type CryptoInfo struct {
 }
 
 type CustomerInfo struct {
-	FirstName  *string `json:"first_name,omitempty"`
-	LastName   *string `json:"last_name,omitempty"`
-	Email      *string `json:"email,omitempty"`
-	Phone      *string `json:"phone,omitempty"`
-	CustomerID *string `json:"customer_id,omitempty"`
-	NationalID *string `json:"national_id,omitempty"`
+	FirstName                    *string `json:"first_name,omitempty"`
+	LastName                     *string `json:"last_name,omitempty"`
+	Email                        *string `json:"email,omitempty"`
+	Phone                        *string `json:"phone,omitempty"`
+	CustomerID                   *string `json:"customer_id,omitempty"`
+	NationalID                   *string `json:"national_id,omitempty"`
+	TaxpayerIdentificationNumber *string `json:"taxpayer_identification_number,omitempty"`
 }
 
 type BillingInfo struct {
@@ -97,7 +98,7 @@ type InvoiceResponse struct {
 	PaymentFee    float64   `json:"payment_fee,omitempty"`
 	Address       string    `json:"address,omitempty"`
 	Memo          string    `json:"memo,omitempty"`
-	FlowData      *FlowData `json:"flowData,omitempty"`
+	FlowData      *FlowData `json:"flow_data,omitempty"`
 }
 
 type AddressRequest struct {
