@@ -34,12 +34,13 @@ type CustomerInfo struct {
 }
 
 type BillingInfo struct {
-	Address     *string `json:"address,omitempty"`
-	CountryCode *string `json:"country_code,omitempty"`
-	Country     *string `json:"country,omitempty"`
-	City        *string `json:"city,omitempty"`
-	PostCode    *string `json:"post_code,omitempty"`
-	Region      *string `json:"region,omitempty"`
+	Address        *string `json:"address,omitempty"`
+	CountryCode    *string `json:"country_code,omitempty"`
+	Country        *string `json:"country,omitempty"`
+	City           *string `json:"city,omitempty"`
+	PostCode       *string `json:"post_code,omitempty"`
+	Region         *string `json:"region,omitempty"`
+	PaymentPurpose *string `json:"payment_purpose,omitempty"`
 }
 
 type BankInfo struct {

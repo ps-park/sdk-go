@@ -26,7 +26,8 @@ func TestDetailsStructure(t *testing.T) {
 			"country": "Ukraine",
 			"city": "Kyiv",
 			"post_code": "01001",
-			"region": "Kyiv Oblast"
+			"region": "Kyiv Oblast",
+			"payment_purpose": "Bank transfer"
 		  },
 		  "bank": {
 			"account": "Bank Account",
@@ -62,12 +63,13 @@ func TestDetailsStructure(t *testing.T) {
 	}
 
 	billing := &sdk_go.BillingInfo{
-		Address:     strPtr("Address"),
-		CountryCode: strPtr("UA"),
-		Country:     strPtr("Ukraine"),
-		City:        strPtr("Kyiv"),
-		PostCode:    strPtr("01001"),
-		Region:      strPtr("Kyiv Oblast"),
+		Address:        strPtr("Address"),
+		CountryCode:    strPtr("UA"),
+		Country:        strPtr("Ukraine"),
+		City:           strPtr("Kyiv"),
+		PostCode:       strPtr("01001"),
+		Region:         strPtr("Kyiv Oblast"),
+		PaymentPurpose: strPtr("Bank transfer"),
 	}
 
 	bank := &sdk_go.BankInfo{
