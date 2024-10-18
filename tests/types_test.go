@@ -27,7 +27,8 @@ func TestDetailsStructure(t *testing.T) {
 			"city": "Kyiv",
 			"post_code": "01001",
 			"region": "Kyiv Oblast",
-			"payment_purpose": "Bank transfer"
+			"payment_purpose": "Bank transfer",
+			"street": "Baker Street"
 		  },
 		  "bank": {
 			"account": "Bank Account",
@@ -70,6 +71,7 @@ func TestDetailsStructure(t *testing.T) {
 		PostCode:       strPtr("01001"),
 		Region:         strPtr("Kyiv Oblast"),
 		PaymentPurpose: strPtr("Bank transfer"),
+		Street:         strPtr("Baker Street"),
 	}
 
 	bank := &sdk_go.BankInfo{
