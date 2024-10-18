@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.6** - _18.10.2024_
+* Updated billing info struct.
+
 **0.0.5** - _10.10.2024_
 * Updated billing info struct.
 

@@ -41,6 +41,7 @@ type BillingInfo struct {
 	PostCode       *string `json:"post_code,omitempty"`
 	Region         *string `json:"region,omitempty"`
 	PaymentPurpose *string `json:"payment_purpose,omitempty"`
+	Street         *string `json:"street,omitempty"`
 }
 
 type BankInfo struct {
