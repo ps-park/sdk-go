@@ -48,6 +48,7 @@ type BankInfo struct {
 	Account *string `json:"account,omitempty"`
 	ID      *string `json:"id,omitempty"`
 	Name    *string `json:"name,omitempty"`
+	BicCode *string `json:"bic_code,omitempty"`
 }
 
 type CardData struct {

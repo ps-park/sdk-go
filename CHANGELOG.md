@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.7** - _19.11.2024_
+* Added `bic_code` for Bank struct.
+
 **0.0.6** - _18.10.2024_
 * Updated billing info struct.
 
