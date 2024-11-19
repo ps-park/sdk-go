@@ -33,7 +33,8 @@ func TestDetailsStructure(t *testing.T) {
 		  "bank": {
 			"account": "Bank Account",
 			"id": "Bank ID",
-			"name": "Bank Name"
+			"name": "Bank Name",
+			"bic_code": "SABADE5S"
 		  },
 		  "card_data": {
 			"exp_month": "08",
@@ -78,6 +79,7 @@ func TestDetailsStructure(t *testing.T) {
 		Account: strPtr("Bank Account"),
 		ID:      strPtr("Bank ID"),
 		Name:    strPtr("Bank Name"),
+		BicCode: strPtr("SABADE5S"),
 	}
 
 	cardData := &sdk_go.CardData{
