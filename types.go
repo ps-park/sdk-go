@@ -52,13 +52,24 @@ type BankInfo struct {
 }
 
 type CardData struct {
+	Number   *string `json:"number,omitempty"`
 	ExpMonth *string `json:"exp_month,omitempty"`
 	ExpYear  *string `json:"exp_year,omitempty"`
+	CVV      *string `json:"cvv,omitempty"`
 }
 
 type WebData struct {
-	IP        *string `json:"ip,omitempty"`
-	UserAgent *string `json:"user_agent,omitempty"`
+	IP                       string `json:"ip,omitempty"`
+	UserAgent                string `json:"user_agent,omitempty"`
+	BrowserColorDepth        int    `json:"browser_color_depth,omitempty"`
+	BrowserLanguage          string `json:"browser_language,omitempty"`
+	BrowserScreenHeight      int    `json:"browser_screen_height,omitempty"`
+	BrowserScreenWidth       int    `json:"browser_screen_width,omitempty"`
+	BrowserTimezone          string `json:"browser_timezone,omitempty"`
+	BrowserTimezoneOffset    int    `json:"browser_timezone_offset,omitempty"`
+	BrowserJavaEnabled       string `json:"browser_java_enabled,omitempty"`
+	BrowserJavaScriptEnabled string `json:"browser_java_script_enabled,omitempty"`
+	BrowserAcceptHeader      string `json:"browser_accept_header,omitempty"`
 }
 
 type UISchema struct {

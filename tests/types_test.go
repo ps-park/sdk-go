@@ -37,12 +37,23 @@ func TestDetailsStructure(t *testing.T) {
 			"bic_code": "SABADE5S"
 		  },
 		  "card_data": {
+			"number": "4111111111111111",
 			"exp_month": "08",
-			"exp_year": "2030"
+			"exp_year": "2030",
+			"cvv": "123"
 		  },
 		  "web_data": {
 			"ip": "Firefox",
-			"user_agent": "127.0.0.1"
+			"user_agent": "127.0.0.1",
+			"browser_color_depth": 30,
+			"browser_language": "en-GB,en-US;q=0.9,en;q=0.8",
+			"browser_screen_height": 1080,
+			"browser_screen_width": 1920,
+			"browser_timezone": "Europe/Kiev",
+			"browser_timezone_offset": -120,
+			"browser_java_enabled": "false",
+			"browser_java_script_enabled": "true",
+			"browser_accept_header": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,/;q=0.8"
 		  },
 		  "ui": {
 			"language": "en"
@@ -83,13 +94,24 @@ func TestDetailsStructure(t *testing.T) {
 	}
 
 	cardData := &sdk_go.CardData{
+		Number:   strPtr("4111111111111111"),
 		ExpMonth: strPtr("08"),
 		ExpYear:  strPtr("2030"),
+		CVV:      strPtr("123"),
 	}
 
 	webData := &sdk_go.WebData{
-		IP:        strPtr("Firefox"),
-		UserAgent: strPtr("127.0.0.1"),
+		IP:                       "Firefox",
+		UserAgent:                "127.0.0.1",
+		BrowserColorDepth:        30,
+		BrowserLanguage:          "en-GB,en-US;q=0.9,en;q=0.8",
+		BrowserScreenHeight:      1080,
+		BrowserScreenWidth:       1920,
+		BrowserTimezone:          "Europe/Kiev",
+		BrowserTimezoneOffset:    -120,
+		BrowserJavaEnabled:       "false",
+		BrowserJavaScriptEnabled: "true",
+		BrowserAcceptHeader:      "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,/;q=0.8",
 	}
 
 	uii := &sdk_go.UISchema{
