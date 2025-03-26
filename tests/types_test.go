@@ -18,12 +18,14 @@ func TestDetailsStructure(t *testing.T) {
 			"first_name": "First Name",
 			"last_name": "Last Name",
 			"customer_id": "customer-id",
-			"taxpayer_identification_number": "12345-6688"
+			"taxpayer_identification_number": "12345-6688",
+			"birthdate": "2004-09-21"
 		  },
 		  "billing_info": {
 			"address": "Address",
 			"country_code": "UA",
 			"country": "Ukraine",
+			"state": "UA",
 			"city": "Kyiv",
 			"post_code": "01001",
 			"region": "Kyiv Oblast",
@@ -73,12 +75,14 @@ func TestDetailsStructure(t *testing.T) {
 		LastName:                     strPtr("Last Name"),
 		CustomerID:                   strPtr("customer-id"),
 		TaxpayerIdentificationNumber: strPtr("12345-6688"),
+		Birthdate:                    strPtr("2004-09-21"),
 	}
 
 	billing := &sdk_go.BillingInfo{
 		Address:        strPtr("Address"),
 		CountryCode:    strPtr("UA"),
 		Country:        strPtr("Ukraine"),
+		State:          strPtr("UA"),
 		City:           strPtr("Kyiv"),
 		PostCode:       strPtr("01001"),
 		Region:         strPtr("Kyiv Oblast"),

@@ -31,12 +31,14 @@ type CustomerInfo struct {
 	CustomerID                   *string `json:"customer_id,omitempty"`
 	NationalID                   *string `json:"national_id,omitempty"`
 	TaxpayerIdentificationNumber *string `json:"taxpayer_identification_number,omitempty"`
+	Birthdate                    *string `json:"birthdate,omitempty"`
 }
 
 type BillingInfo struct {
 	Address        *string `json:"address,omitempty"`
 	CountryCode    *string `json:"country_code,omitempty"`
 	Country        *string `json:"country,omitempty"`
+	State          *string `json:"state,omitempty"`
 	City           *string `json:"city,omitempty"`
 	PostCode       *string `json:"post_code,omitempty"`
 	Region         *string `json:"region,omitempty"`

@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.9** - _26.03.2025_
+* Updated Customerand BillingInfo structures.
+
 **0.0.8** - _17.12.2024_
 * Updated WebData and CardData structures.
 
