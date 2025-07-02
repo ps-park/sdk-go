@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.10** - _02.07.2025_
+* Updated Details structure.
+
 **0.0.9** - _26.03.2025_
 * Updated Customerand BillingInfo structures.
 

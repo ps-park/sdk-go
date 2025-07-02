@@ -82,6 +82,10 @@ type EscrowPayment struct {
 	PaymentWalletID *string `json:"payment_wallet_id,omitempty"`
 }
 
+type Project struct {
+	URL string `json:"url,omitempty"`
+}
+
 type FlowData struct {
 	Action string        `json:"action"`
 	Method string        `json:"method"`
@@ -150,6 +154,7 @@ type Details struct {
 	WebData       *WebData       `json:"web_data,omitempty"`
 	UI            *UISchema      `json:"ui,omitempty"`
 	EscrowPayment *EscrowPayment `json:"escrow_payment,omitempty"`
+	Project       *Project       `json:"project,omitempty"`
 }
 
 type WithdrawalRequest struct {
