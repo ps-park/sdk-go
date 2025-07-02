@@ -62,6 +62,9 @@ func TestDetailsStructure(t *testing.T) {
 		  },
 		  "escrow_payment": {
 			"payment_wallet_id": "uuid"
+		  },
+     	  "project": {
+			"url": "https://project-url.com"
 		  }
 		}
 	`
@@ -126,6 +129,10 @@ func TestDetailsStructure(t *testing.T) {
 		PaymentWalletID: strPtr("uuid"),
 	}
 
+	project := &sdk_go.Project{
+		URL: "https://project-url.com",
+	}
+
 	details := sdk_go.Details{
 		Crypto:        crypto,
 		Customer:      customer,
@@ -135,6 +142,7 @@ func TestDetailsStructure(t *testing.T) {
 		WebData:       webData,
 		UI:            uii,
 		EscrowPayment: escowPayment,
+		Project:       project,
 	}
 
 	outJsonStr, err := json.MarshalIndent(details, "", "  ")
