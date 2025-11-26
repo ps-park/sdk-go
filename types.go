@@ -32,6 +32,7 @@ type CustomerInfo struct {
 	NationalID                   *string `json:"national_id,omitempty"`
 	TaxpayerIdentificationNumber *string `json:"taxpayer_identification_number,omitempty"`
 	Birthdate                    *string `json:"birthdate,omitempty"`
+	DocumentType                 *string `json:"document_type,omitempty"`
 }
 
 type BillingInfo struct {
