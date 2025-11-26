@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.11** - _26.11.2025_
+* Updated CustomerInfo structure.
+
 **0.0.10** - _02.07.2025_
 * Updated Details structure.
 

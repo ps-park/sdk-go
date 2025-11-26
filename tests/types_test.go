@@ -19,7 +19,8 @@ func TestDetailsStructure(t *testing.T) {
 			"last_name": "Last Name",
 			"customer_id": "customer-id",
 			"taxpayer_identification_number": "12345-6688",
-			"birthdate": "2004-09-21"
+			"birthdate": "2004-09-21",
+			"document_type": "CNPJ"
 		  },
 		  "billing_info": {
 			"address": "Address",
@@ -79,6 +80,7 @@ func TestDetailsStructure(t *testing.T) {
 		CustomerID:                   strPtr("customer-id"),
 		TaxpayerIdentificationNumber: strPtr("12345-6688"),
 		Birthdate:                    strPtr("2004-09-21"),
+		DocumentType:                 strPtr("CNPJ"),
 	}
 
 	billing := &sdk_go.BillingInfo{
