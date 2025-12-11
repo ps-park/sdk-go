@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.11** - _11.12.2025_
+* Updated domain.
+
 **0.0.10** - _02.07.2025_
 * Updated Details structure.
 
