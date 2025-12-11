@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.12** - _11.12.2025_
+* Updated domain.
+
 **0.0.11** - _26.11.2025_
 * Updated CustomerInfo structure.
 

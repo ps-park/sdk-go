@@ -1,7 +1,7 @@
 package sdk_go
 
 const (
-	BaseURL             = "https://api.pspark.io"
+	BaseURL             = "https://api.ppark.io"
 	APIVersion          = "v1"
 	TokenExpirationTime = 30
 )
