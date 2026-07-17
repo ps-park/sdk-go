@@ -1,37 +1,53 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.13** - _17.07.2026_
+
+- Added PWID (Payway ID) support.payway.pwid` field on invoice and withdrawal requests.
+
 **0.0.12** - _11.12.2025_
-* Updated domain.
+
+- Updated domain.
 
 **0.0.11** - _26.11.2025_
-* Updated CustomerInfo structure.
+
+- Updated CustomerInfo structure.
 
 **0.0.10** - _02.07.2025_
-* Updated Details structure.
+
+- Updated Details structure.
 
 **0.0.9** - _26.03.2025_
-* Updated Customerand BillingInfo structures.
+
+- Updated Customerand BillingInfo structures.
 
 **0.0.8** - _17.12.2024_
-* Updated WebData and CardData structures.
+
+- Updated WebData and CardData structures.
 
 **0.0.7** - _19.11.2024_
-* Added `bic_code` for Bank struct.
+
+- Added `bic_code` for Bank struct.
 
 **0.0.6** - _18.10.2024_
-* Updated billing info struct.
+
+- Updated billing info struct.
 
 **0.0.5** - _10.10.2024_
-* Updated billing info struct.
+
+- Updated billing info struct.
 
 **0.0.4** - _02.10.2024_
-* Updated customer info struct. Bug fix.
+
+- Updated customer info struct. Bug fix.
 
 **0.0.3** - _23.09.2024_
-* Updated billing info struct.
+
+- Updated billing info struct.
 
 **0.0.2** - _16.09.2024_
-* Updated schema for the request.
+
+- Updated schema for the request.
 
 **0.0.1** - _26.04.2024_
-* Created package.
+
+- Created package.
