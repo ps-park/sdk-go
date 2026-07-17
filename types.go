@@ -87,6 +87,10 @@ type Project struct {
 	URL string `json:"url,omitempty"`
 }
 
+type Payway struct {
+	PWID string `json:"pwid,omitempty"`
+}
+
 type FlowData struct {
 	Action string        `json:"action"`
 	Method string        `json:"method"`
@@ -156,6 +160,7 @@ type Details struct {
 	UI            *UISchema      `json:"ui,omitempty"`
 	EscrowPayment *EscrowPayment `json:"escrow_payment,omitempty"`
 	Project       *Project       `json:"project,omitempty"`
+	Payway        *Payway        `json:"payway,omitempty"`
 }
 
 type WithdrawalRequest struct {
